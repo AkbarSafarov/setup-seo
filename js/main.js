@@ -25,40 +25,40 @@ $(function(){
 	var $body = $(document.body),
       	$html = $(document.documentElement);
 
- //  function formPopup($btn,$wrap){
+    function formPopup($btn,$wrap){
 
- //    var closeForm = $('.formExtraWrapper .close-form'),
- //        formWrap = $($wrap),
- //        formBtn = $($btn),
- //        formOpened = 'opened',
- //        overflowHidden = 'oveflowHidden';
+    var closeForm = $('.formExtraWrapper .close-form'),
+            formWrap = $($wrap),
+            formBtn = $($btn),
+            formOpened = 'opened',
+            overflowHidden = 'oveflowHidden';
 
- //    closeForm.on('click', function() {
- //        formWrap.removeClass(formOpened);
- //        $html.removeClass(overflowHidden);
- //    });
- //    formBtn.on('click', function(event) {
- //        formWrap.addClass(formOpened);
- //        $html.toggleClass(overflowHidden);
- //        event.preventDefault();
- //    });
+        closeForm.on('click', function() {
+            formWrap.removeClass(formOpened);
+            $html.removeClass(overflowHidden);
+        });
+        formBtn.on('click', function(event) {
+            formWrap.addClass(formOpened);
+            $html.toggleClass(overflowHidden);
+            event.preventDefault();
+        });
 
- //    $html.on('keyup', function(event) {
- //        if (formWrap.hasClass(formOpened) && event.keyCode == 27) {
- //            formWrap.removeClass(formOpened);
- //            $html.removeClass(overflowHidden);
- //        }
- //    });
- //    $body.on('click touchstart', function(a) {
- //        if ($(a.target).closest('.formExtraWrapper').length || $(a.target).closest(formBtn).length) return;
- //        if (formWrap.hasClass(formOpened)) {
- //            formWrap.removeClass(formOpened);
- //            $html.removeClass(overflowHidden);
- //        }
- //    });
- //  }
+        $html.on('keyup', function(event) {
+            if (formWrap.hasClass(formOpened) && event.keyCode == 27) {
+                formWrap.removeClass(formOpened);
+                $html.removeClass(overflowHidden);
+            }
+        });
+        $body.on('click touchstart', function(a) {
+            if ($(a.target).closest('.formExtraWrapper').length || $(a.target).closest(formBtn).length) return;
+            if (formWrap.hasClass(formOpened)) {
+                formWrap.removeClass(formOpened);
+                $html.removeClass(overflowHidden);
+            }
+        });
+    }
 
-	// formPopup('.contacts_btn','.contacts_popup');
+	formPopup('.form_btn','.form_popup');
 
     var menuBtn = $('.burger'),
         menuWrapper = $('.menu_burger'),
@@ -255,6 +255,34 @@ $(function(){
         if ($(this).closest('form').find('.field').hasClass('incorrect-phone') || $(this).closest('form').find('.field').hasClass('error')){
             e.preventDefault();
         }
+    });
+
+    $('.menu_header li a').each(function(){
+        if ($(this).parent().find('ul').length) {
+            $(this).parent().addClass('submenu-parent')
+            $(this).append('<span class="arrow"></span>');
+        }
+    });
+
+    $('.menu_top_main li a').each(function(){
+        if ($(this).parent().find('ul').length) {
+            $(this).parent().addClass('submenu-parent')
+            $(this).append('<span class="arrow"></span>');
+        }
+    });
+
+
+    $('.menu_burger li a').each(function(){
+        if ($(this).parent().find('ul').length) {
+            $(this).parent().addClass('submenu-parent')
+            $(this).append('<span class="arrow"></span>');
+        }
+    });
+
+    $('.menu_burger li').find('a .arrow').on('click', function(event){
+        $(this).parents('li:first').siblings().removeClass('hasSubmenu');
+        $(this).parents('li:first').toggleClass('hasSubmenu');
+        return false;
     });
 });
 
