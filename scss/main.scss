@@ -503,6 +503,16 @@ img, textarea, input, table {
     opacity: 0;
     box-shadow: 0 0 0 6000px rgba(#1E193D, .8);
 
+    .btn_button {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+
+        @media all and (min-width: 768px) {
+            display: none;
+        }
+    }
+
     &.opened {    
         opacity: 1;
         visibility: visible;
@@ -511,7 +521,7 @@ img, textarea, input, table {
     .menu_scroll {
         overflow: auto;
         position: absolute;
-        top: 40px;
+        top: 50px;
         left: 0;
         right: 0;
         bottom: 0; 
@@ -519,7 +529,7 @@ img, textarea, input, table {
 
     .menuClose {
         position: absolute;
-        top: 7px;
+        top: 16px;
         right: 10px;
         width: 24px;
         height: 24px;
@@ -655,9 +665,44 @@ img, textarea, input, table {
         padding: 10px 15px;
     }
 
+    .phone_mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 15px;
+        margin: -10px -15px 0;
+        background: #EBE6DF;
+        gap: 10px;
+
+        @media all and (min-width: 768px) {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+            font-size: 0;
+        }
+
+        a.tel {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 24px;
+        }
+
+        img {
+            max-width: 24px;
+        }
+    }
+
     .block_inner {
         display: flex;
         align-items: center;
+
+        @media all and (max-width: 767px){
+            padding-top: 10px;
+        }
 
         .logo {
             flex: 0 0 319px;
@@ -2974,6 +3019,7 @@ img, textarea, input, table {
         padding: 25px 20px 28px;
         display: flex;
         align-items: center;
+        text-decoration: none;
 
         &-left {
             width: 65px;
