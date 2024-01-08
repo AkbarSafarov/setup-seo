@@ -3524,3 +3524,51 @@ img, textarea, input, table {
         }
     }
 }
+
+
+.form-popup-wrapper.th_block {
+
+    .formExtraWrapper {
+        @media all and (min-width: 768px){
+            width: 500px;
+        }
+    }
+
+    .form-b {
+        padding: 0;
+        background: none;
+    }
+
+    .th_text {
+        border-radius: 5px;
+        border: 6px solid #EBE6DF;
+        background: linear-gradient(0deg,#FFF 0%,#FFF 100%),#FFF;
+        padding: 36px 61px;
+        text-align: center;
+
+        .icon{
+            padding-bottom: 18px;
+        }
+
+        .name {
+            color: #212123;
+            text-align: center;
+            font-family: $rc;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 36px; 
+            padding-bottom: 7px;
+        }
+
+        .text {
+            color: #000;
+            text-align: center;
+            font-family: $rc;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 28px; 
+        }
+    }
+}

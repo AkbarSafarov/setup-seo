@@ -60,6 +60,24 @@ $(function(){
 
 	formPopup('.form_btn','.form_popup');
 
+    function thpopup() {
+        const wrap = $('.form-popup-wrapper.th_block');
+
+        $('.form-popup-wrapper.opened').removeClass('opened');
+        wrap.addClass('opened');
+        $html.removeClass('oveflowHidden');
+
+        $('.form-popup-wrapper.th_block').find('.close-form').on('click', function() {
+            wrap.removeClass('opened');
+        });
+
+        $html.on('keyup', function(event) {
+            if (wrap.hasClass('opened') && event.keyCode == 27) {
+                wrap.removeClass('opened');
+            }
+        });
+    }
+
     var menuBtn = $('.burger'),
         menuWrapper = $('.menu_burger'),
         menuClose = $('.menuClose'),        
@@ -254,6 +272,9 @@ $(function(){
 
         if ($(this).closest('form').find('.field').hasClass('incorrect-phone') || $(this).closest('form').find('.field').hasClass('error')){
             e.preventDefault();
+        } else {
+             e.preventDefault();
+            thpopup();
         }
     });
 
