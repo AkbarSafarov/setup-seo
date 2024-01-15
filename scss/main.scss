@@ -1005,12 +1005,13 @@ img, textarea, input, table {
 }
 
 .top_form_block {
-    background: url(../img/bgtop.jpg) 50% 50% no-repeat #f7f8fc;
-    padding: 78px 15px 100px;
+    background: url(../img/bgtop.jpg) 50% -20px no-repeat #F3F0EE;
+    padding: 20px 15px 100px;
     background-size: contain;
 
     .left {
         max-width: 584px;
+        padding-top: 38px;
     }
 
     .title {
@@ -1049,8 +1050,12 @@ img, textarea, input, table {
     }
 
     @media all and (max-width: 1024px) {
-        padding: 30px 15px;
-        background-position: 100% 50%;
+        padding: 20px 15px;
+        background-position: 100% -20px;
+
+        .left {
+            padding-top: 0;
+        }
 
         .title {
             font-size: 32px;
@@ -3570,5 +3575,30 @@ img, textarea, input, table {
             font-weight: 300;
             line-height: 28px; 
         }
+    }
+}
+
+.path_block_link {
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    display: flex;
+    align-self: center;
+    gap: 4px;
+    flex-wrap:wrap;
+
+    span {
+        color: #777;
+    }
+
+    a {
+        text-decoration: none;
+        color: #777;
+    }
+
+    @media all and (max-width: 1024px) {
+        display: none;
     }
 }

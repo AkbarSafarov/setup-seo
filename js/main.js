@@ -305,6 +305,10 @@ $(function(){
         $(this).parents('li:first').toggleClass('hasSubmenu');
         return false;
     });
+
+    $('.menu_top_main li.submenu-parent a,.menu_top2 li.submenu-parent a').on('click', function(e){
+        e.preventDefault();
+    })
 });
 
 
