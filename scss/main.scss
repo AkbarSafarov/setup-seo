@@ -707,7 +707,14 @@ img, textarea, input, table {
         .logo {
             flex: 0 0 319px;
 
-            a {text-decoration: none;display: inline-block;}
+            a {
+                text-decoration: none;
+                display: block;
+
+                img {
+                    max-width: 250px;
+                }
+            }
 
             @media all and (max-width: 1240px) {
                 flex: 0 0 200px;
@@ -3490,9 +3497,15 @@ img, textarea, input, table {
 
 @media all and (max-width: 480px) {
     .blog_block__item, 
-    .range_block__item, 
     .services_block__item {
         flex: calc(100% - 30px);
+    }
+
+    .range_block__item {
+        flex: none;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .about_us_block__item {

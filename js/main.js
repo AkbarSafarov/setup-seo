@@ -308,7 +308,38 @@ $(function(){
 
     $('.menu_top_main li.submenu-parent a,.menu_top2 li.submenu-parent a').on('click', function(e){
         e.preventDefault();
-    })
+    });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    checkTagsOverflow(); 
+});
+
+function checkTagsOverflow() {
+    var tagList = document.getElementById('tagList');
+    var expandBtn = document.getElementById('expandBtn');
+    
+    if (tagList.scrollWidth > tagList.clientWidth) {
+        expandBtn.style.display = 'block';
+    } else {
+        expandBtn.style.display = 'none';
+    }
+}
+
+function expandTags() {
+    const tagList = document.getElementById('tagList');
+    const btn = document.getElementById('expandBtn');
+
+    tagList.classList.toggle('expanded');
+
+    if (btn.classList.contains('active')) {
+        btn.classList.remove('active');
+        btn.innerText = 'Развернуть все';
+    } else {
+        btn.classList.add('active');
+        btn.innerText = 'Свернуть';
+    }
+    
+}
 
 
