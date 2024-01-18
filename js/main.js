@@ -125,6 +125,10 @@ $(function(){
 	    scrollToAccordion: false
 	});
 
+    const hash = '#tabs-0';
+    
+    $("#infoTabs ul.product-tabs > li a[href='" + hash + "']").click();
+
 	$('.algoritmTabs').responsiveTabs({
 	    rotate: false,
 	    startCollapsed: 'accordion',

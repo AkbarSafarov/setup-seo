@@ -830,7 +830,7 @@ img, textarea, input, table {
                 }
             }
 
-            @media all and (max-width: 1240px) {
+            @media all and (max-width: 1024px) {
                 padding: 0;
 
                 ul {
@@ -917,7 +917,8 @@ img, textarea, input, table {
                     transition: all 0.3s;
 
                     @media all and (max-width: 1240px) {
-                        padding: 4px 8px;
+                        padding: 10px 6px;
+                        font-size: 15px;
                     }
 
                     &:hover {
@@ -1769,6 +1770,11 @@ img, textarea, input, table {
             position: relative;
             text-align: right;
 
+            @media all and (max-width: 767px) {
+                display: inline-block;
+                vertical-align: top;
+            }
+
             &:before {
                 content: '';
                 position: absolute;
@@ -1778,6 +1784,12 @@ img, textarea, input, table {
                 height: 102px;
                 background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='65' height='102' viewBox='0 0 65 102' fill='none'%3E%3Cpath d='M4.30244 100C27.4641 88.5355 38.753 54.7251 23.3768 32.7678C21.8197 30.436 19.8733 28.2986 17.3431 27.1327C10.9201 24.4123 3.71853 29.8531 2.35608 36.0711C-0.174193 47.3412 11.3093 57.8341 20.068 62.4976C28.4373 66.9668 37.9745 69.6872 47.1224 65.801C65.0289 58.2228 67.3645 32.3791 56.2703 18' stroke='black' stroke-width='3' stroke-miterlimit='10' stroke-linejoin='round'/%3E%3Cpath d='M46.5 10C48.9853 10 51 7.76142 51 5C51 2.23858 48.9853 0 46.5 0C44.0147 0 42 2.23858 42 5C42 7.76142 44.0147 10 46.5 10Z' fill='black'/%3E%3C/svg%3E") 50% no-repeat;
                 background-size: contain;
+
+                @media all and (max-width: 1024px)  {
+                    width: 40px;
+                    height: 80px;
+                    right: -5px;
+                }
             }
 
             .title {
@@ -3288,10 +3300,24 @@ img, textarea, input, table {
         .footer__top-left {
             text-align: center;
             padding-bottom: 16px;
+
+            img {
+                max-width: 200px;
+            }
+        }
+
+        .footer__top-right {
+            text-align: center;
+
+            .links {
+                display: inline-flex;
+            }
         }
 
         .footer__email {
             margin-bottom: 16px;
+
+
         }
 
         .menu-bottom {
