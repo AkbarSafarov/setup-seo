@@ -1741,6 +1741,8 @@ img, textarea, input, table {
             &:before{
                 width: 35px;
                 height: 20px;
+                bottom: auto;
+                top: 8px;
             }
         }
 
@@ -3655,6 +3657,7 @@ img, textarea, input, table {
     }
 
     @media all and (max-width: 1024px) {
-        display: none;
+        //display: none;
+        padding-bottom:10px;
     }
 }

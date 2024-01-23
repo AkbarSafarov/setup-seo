@@ -331,6 +331,14 @@ $(function(){
             scrollTop: $($(this).attr('href')).offset().top - 170
         },500);
     });
+
+    $('.btn_list_menu').on('click', function(){
+        $('.main_list_menu').toggleClass('active');
+    });
+
+    $('.main_list_menu li a').on('click', function(){
+        if($('.main_list_menu').hasClass('active')) $('.main_list_menu').removeClass('active');
+    })
 });
 
 document.addEventListener("DOMContentLoaded", function () {

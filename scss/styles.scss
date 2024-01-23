@@ -117,6 +117,7 @@ $m: 'Montserrat', sans-serif;
 		padding-top: 12px;
 		display: flex;
 		align-items: center;
+		padding-left: 60px;
 
 		.date {
 			color: #777;
@@ -148,6 +149,10 @@ $m: 'Montserrat', sans-serif;
 				background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cg clip-path='url(%23clip0_740_2908)'%3E%3Cpath d='M12.0001 18.75C8.80135 18.75 5.77435 17.3948 3.47485 14.934C3.1921 14.6318 3.2086 14.157 3.51085 13.8743C3.81385 13.5915 4.28785 13.608 4.57135 13.9103C6.5836 16.0643 9.22135 17.25 12.0001 17.25C15.5724 17.25 18.8619 15.2963 20.8801 12C18.8626 8.70375 15.5724 6.75 12.0001 6.75C8.2966 6.75 4.8961 8.85075 2.9026 12.3698C2.6986 12.7305 2.2396 12.858 1.88035 12.6525C1.5196 12.4485 1.3936 11.991 1.5976 11.6302C3.86035 7.635 7.74985 5.25 12.0001 5.25C16.2511 5.25 20.1399 7.635 22.4026 11.6302C22.5324 11.8597 22.5324 12.1403 22.4026 12.369C20.1399 16.3643 16.2511 18.75 12.0001 18.75Z' fill='%23999999'/%3E%3Cpath d='M12 15.75C9.93225 15.75 8.25 14.0677 8.25 12C8.25 9.93225 9.93225 8.25 12 8.25C14.0677 8.25 15.75 9.93225 15.75 12C15.75 14.0677 14.0677 15.75 12 15.75ZM12 9.75C10.7595 9.75 9.75 10.7595 9.75 12C9.75 13.2405 10.7595 14.25 12 14.25C13.2405 14.25 14.25 13.2405 14.25 12C14.25 10.7595 13.2405 9.75 12 9.75Z' fill='%23999999'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_740_2908'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E") 50% no-repeat;
 				margin: auto;
 			}
+		}
+
+		@media all and (max-width: 1024px){
+			padding-left: 40px;
 		}
 
 		@media all and (max-width: 767px) {
@@ -381,6 +386,16 @@ $m: 'Montserrat', sans-serif;
 	border: 1px solid #999;
 	background: #FCF8F3;
 	transition: all .3s;
+	position: relative;
+
+	.link {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		text-decoration: none;
+	}
 
 	@media all and (min-width: 941px) and (max-width: 1260px) {
 		padding: 16px;
@@ -437,6 +452,12 @@ $m: 'Montserrat', sans-serif;
 			font-style: normal;
 			font-weight: 400;
 			line-height: 23px; /* 164.286% */
+			position: relative;
+
+			a {
+				text-decoration: none;
+				color: #000;
+			}
 		}
 
 		.blog_detals {
@@ -704,6 +725,10 @@ $m: 'Montserrat', sans-serif;
 		display: flex;
 		align-items: start;
 
+		@media all and (max-width: 960px){
+			flex-wrap:wrap;
+		}
+
 		.left {
 			flex: 1 1 auto;
 			margin-right: 30px;
@@ -713,6 +738,13 @@ $m: 'Montserrat', sans-serif;
 			font-style: normal;
 			font-weight: 400;
 			line-height: 23px; /* 143.75% */
+
+			@media all and (max-width: 960px){
+				order: 1;
+				margin: 0;
+				width: 100%;
+				flex: none;
+			}
 
 			p{
 				margin: 6px 0;
@@ -788,12 +820,12 @@ $m: 'Montserrat', sans-serif;
 		}
 
 		.right {
-			flex: 0 0 270px;
-			position: sticky;
-			top: 170px;
+			position: relative;
 
-			@media all and (max-width: 960px){
-				display: none;
+			@media all and (min-width: 961px){
+				flex: 0 0 270px;
+				position: sticky;
+				top: 170px;
 			}
 
 			.name_menu {
@@ -805,10 +837,43 @@ $m: 'Montserrat', sans-serif;
 				margin-bottom: 24px;
 			}
 
+			@media all and (max-width: 960px){
+				width: 100%;
+
+				.name_menu {
+					cursor: pointer;
+					padding: 10px 15px;
+					color: #fff;
+					background: #DA4059;
+					font-size: 18px;
+				    border-radius: 5px;
+				    display: inline-block;
+				    vertical-align: top;
+				}
+			}
+
 			ul {
 				padding: 0;
 				margin: 0;
 				list-style: none;
+
+				@media all and (max-width: 960px){
+					display: none;
+					position: absolute;
+					top: 100%;
+					left: 0;
+					width: 280px;
+					background: #fff;
+					padding: 16px;
+					box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.15);
+					border-radius: 5px;
+					margin-top: -10px;
+					z-index: 100;
+
+					&.active {
+						display: block;
+					}
+				}
 
 				li {
 					a {
