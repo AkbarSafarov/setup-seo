@@ -164,9 +164,7 @@ $(function(){
 	    const arrow = slider.data('arrow');    
 
 	    const newProductsSwiper = new Swiper(sliderClass, {
-			loop: true,
-			slidesPerView: 2,
-			loopedSlides: 2,
+			slidesPerView: "auto",
             spaceBetween: 28,
 	      	navigation: {
 	            nextEl: '.swiper-' + arrow + '-next',
@@ -319,7 +317,7 @@ $(function(){
         return false;
     });
 
-    $('.menu_top_main li.submenu-parent a,.menu_top2 li.submenu-parent a').on('click', function(e){
+    $('.menu_top_main li.submenu-parent > a,.menu_top2 li.submenu-parent > a').on('click', function(e){
         e.preventDefault();
     });
 

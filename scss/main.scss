@@ -1035,6 +1035,7 @@ img, textarea, input, table {
         font-weight: 600;
         line-height: 58.539px; /* 91.468% */
         padding-bottom: 16px;
+        margin: 0;
 
         span {
             display: block;
@@ -2901,8 +2902,14 @@ img, textarea, input, table {
         }
     }
 
+    @media all and (min-width: 768){
+        .client + .certificates{
+            width: calc(50% - 26px);
+        }
+    }
+
     .certificates {
-        width: calc(50% - 26px);
+        width: calc(100% - 26px);
 
         &__header {
             display: flex;
@@ -2918,13 +2925,19 @@ img, textarea, input, table {
 
         a {
             display: block;
+            width: auto;
+            max-width: 446px;
             text-decoration: none;
         }
 
         img {
-            width: 100%;
+            max-width: 446px;
             height: 342px;
             object-fit: cover;
+
+            @media all and (max-width: 580px){
+                height: 220px;
+            }
         }
     }
 
