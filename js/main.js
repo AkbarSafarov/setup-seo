@@ -336,6 +336,21 @@ $(function(){
 
     $('.main_list_menu li a').on('click', function(){
         if($('.main_list_menu').hasClass('active')) $('.main_list_menu').removeClass('active');
+    });
+
+    var tmenu = $('.header_main'),
+        tmenuOffset = tmenu.offset();
+    $(window).scroll(function(){
+        if (($(window).scrollTop() > tmenuOffset.top)) {
+            tmenu.addClass('fixed'); 
+        } else {
+            tmenu.removeClass('fixed');
+        };
+    }); 
+
+    $('.menu_btn_service').on('click', function(){
+        $(this).toggleClass('active');
+        $('.menu_top_main').toggleClass('active');
     })
 });
 
