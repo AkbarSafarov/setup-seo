@@ -346,6 +346,12 @@ $(function(){
         } else {
             tmenu.removeClass('fixed');
         };
+
+        if (($(window).scrollTop() > 1000)) {
+            $('.button_top_link').fadeIn(); 
+        } else {
+            $('.button_top_link').fadeOut(); 
+        };
     }); 
 
     $('.menu_btn_service').on('click', function(){
@@ -388,3 +394,16 @@ function expandTags() {
 }
 
 
+$(document).ready(function(){
+
+    var link_top = $('.button_top_link');
+    var root = $('html, body');
+
+    link_top.on('click', function(){
+        if (!root.is(':animated')) {
+            root.animate({'scrollTop':0}, 700);
+        }
+        return false
+    })
+
+})
