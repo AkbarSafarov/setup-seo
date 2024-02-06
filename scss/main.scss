@@ -1253,6 +1253,10 @@ img, textarea, input, table {
     @media all and (max-width: 767px){
         background: #EDE7E5;
 
+        .title {
+            padding-bottom: 11px;
+        }
+
         .bg_pc {
             opacity: 0;
         }
@@ -1296,6 +1300,7 @@ img, textarea, input, table {
 
         @media all and (max-width: 500px) {
             padding-bottom: 16px;
+            gap: 10px;
 
             .field,.btn_button {
                 flex: none;
@@ -2738,14 +2743,25 @@ img, textarea, input, table {
         margin-left: 15px;
         margin-bottom: 20px;
         position: relative;
+        background: #EBE6DF;
+        border: 1px solid #212123;
+
+        &:after {
+            position: absolute;
+            content: '';
+            right: 10px;
+            bottom: 10px;
+            width: 24px;
+            height: 24px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M24 24L24 0L-1.04907e-06 24L24 24Z' fill='%232A9DA0'/%3E%3C/svg%3E") 50% 50% no-repeat;
+        }
 
         &-title {
             padding-top: 16px;
             padding-bottom: 16px;
             padding-left: 66px;
             padding-right: 30px;
-            border: 1px solid #212123;
-            background: #EBE6DF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='41' height='16' viewBox='0 0 41 16' fill='none'%3E%3Cpath d='M40.7071 8.7071C41.0976 8.31658 41.0976 7.68341 40.7071 7.29289L34.3431 0.928929C33.9526 0.538405 33.3195 0.538405 32.9289 0.928929C32.5384 1.31945 32.5384 1.95262 32.9289 2.34314L38.5858 8L32.9289 13.6569C32.5384 14.0474 32.5384 14.6805 32.9289 15.0711C33.3195 15.4616 33.9526 15.4616 34.3431 15.0711L40.7071 8.7071ZM8.74228e-08 9L40 9L40 7L-8.74228e-08 7L8.74228e-08 9Z' fill='black'/%3E%3C/svg%3E") 0 50% no-repeat;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='41' height='16' viewBox='0 0 41 16' fill='none'%3E%3Cpath d='M40.7071 8.7071C41.0976 8.31658 41.0976 7.68341 40.7071 7.29289L34.3431 0.928929C33.9526 0.538405 33.3195 0.538405 32.9289 0.928929C32.5384 1.31945 32.5384 1.95262 32.9289 2.34314L38.5858 8L32.9289 13.6569C32.5384 14.0474 32.5384 14.6805 32.9289 15.0711C33.3195 15.4616 33.9526 15.4616 34.3431 15.0711L40.7071 8.7071ZM8.74228e-08 9L40 9L40 7L-8.74228e-08 7L8.74228e-08 9Z' fill='black'/%3E%3C/svg%3E") 0 22px no-repeat;
             color: #000;
             font-size: 18px;
             font-weight: 600;
@@ -2753,31 +2769,16 @@ img, textarea, input, table {
             position: relative;
             cursor: pointer;
 
-            &:after {
-                position: absolute;
-                content: '';
-                right: 10px;
-                bottom: 10px;
-                width: 24px;
-                height: 24px;
-                background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M24 24L24 0L-1.04907e-06 24L24 24Z' fill='%232A9DA0'/%3E%3C/svg%3E") 50% 50% no-repeat;
-            }
-
             &:hover {
-                background-color: #fff;
                 color: #777;
-
-                &:after {
-                    opacity: 0;
-                }
             }
         }
 
         &-body {
             position: absolute;
             top: 100%;
-            left: 0;
-            right: 0;
+            left: -1px;
+            right: -1px;
             padding: 12px 28px 28px;
             background: #fff;
             border: 1px solid #212123;
@@ -2787,18 +2788,27 @@ img, textarea, input, table {
             line-height: 1.3;
         }
 
+        &:hover {
+            background-color: #fff;
+            color: #777;
+
+            &:after {
+                opacity: 0;
+            }
+        }
+
         &.active {
+            background-color: #fff;
+
+            &:after {
+                bottom: auto;
+                top: 10px;
+                transform: rotate(270deg);
+                opacity: 1;
+            }
 
             .quiz_block__item-title {
-                background-color: #fff;
                 color: #777;
-
-                &:after {
-                    bottom: auto;
-                    top: 10px;
-                    transform: rotate(270deg);
-                    opacity: 1;
-                }
             }
 
             .quiz_block__item-body {
