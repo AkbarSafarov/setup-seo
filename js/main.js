@@ -340,11 +340,17 @@ $(function(){
 
     var tmenu = $('.header_main'),
         tmenuOffset = tmenu.offset();
+
     $(window).scroll(function(){
-        if (($(window).scrollTop() > tmenuOffset.top)) {
+        if (($(window).scrollTop() > tmenuOffset.top + 150)) {
             tmenu.addClass('fixed'); 
+            setTimeout(function(){
+                tmenu.addClass('fixed-style'); 
+            }, 500)
+            
         } else {
             tmenu.removeClass('fixed');
+            tmenu.removeClass('fixed-style'); 
         };
 
         if (($(window).scrollTop() > 1000)) {

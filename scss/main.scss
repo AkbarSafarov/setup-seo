@@ -999,7 +999,6 @@ img, textarea, input, table {
                     text-align: left;
                     background: #fff;
                     z-index: 20;
-                    transition: all 0.3s;
                     opacity: 0;
                     visibility: hidden;
 
@@ -1048,7 +1047,7 @@ img, textarea, input, table {
 
 .header_main {
     width: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -1089,6 +1088,13 @@ img, textarea, input, table {
     }
 
     &.fixed {
+        position: fixed;
+        opacity: 0;
+
+        &.fixed-style {
+            opacity: 1;
+            transition: all .3s;
+        }
 
         @media all and (min-width: 1025px) {
             .menu_btn_hide {
@@ -1290,6 +1296,8 @@ img, textarea, input, table {
             flex: 0 0 calc(50% - 9px);
             height: 50px;
             line-height: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
 
             &:hover{
                 border-color: #212123;
@@ -3046,6 +3054,7 @@ img, textarea, input, table {
         &-bottom {
             display: flex;
             justify-content: space-between;
+            margin-top: auto;
         }
 
         &:hover {
