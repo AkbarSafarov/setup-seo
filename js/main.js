@@ -137,6 +137,8 @@ $(function(){
 	    scrollToAccordion: false
 	});
 
+    $('.algoritmTabs').responsiveTabs('activate', 0);
+
 	let numbers = document.querySelectorAll('.animate-number');
 
 	numbers.forEach(function (number) {
@@ -311,7 +313,8 @@ $(function(){
         }
     });
 
-    $('.menu_burger li').find('a .arrow').on('click', function(event){
+    $('.menu_burger li.submenu-parent').find('> a').on('click', function(event){
+        event.preventDefault();
         $(this).parents('li:first').siblings().removeClass('hasSubmenu');
         $(this).parents('li:first').toggleClass('hasSubmenu');
         return false;
@@ -414,17 +417,21 @@ $(document).ready(function(){
 
 })
 
+const mapID = document.querySelector('#map');
 
-ymaps.ready(init);
+if (mapID) {
+    ymaps.ready(init);
 
-function init() {
-    var myMap = new ymaps.Map("map", {
-        center: [55.755814, 37.617635], 
-        zoom: 10,
-        controls: ['zoomControl']
-    });
+    function init() {
 
-    myMap.events.add('wheel', function(e) {
-        e.preventDefault();
-    });
-};
+        var myMap = new ymaps.Map("map", {
+            center: [55.755814, 37.617635], 
+            zoom: 10,
+            controls: ['zoomControl']
+        });
+
+        myMap.events.add('wheel', function(e) {
+            e.preventDefault();
+        });
+    };
+}
