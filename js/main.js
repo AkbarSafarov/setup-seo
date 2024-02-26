@@ -159,22 +159,20 @@ $(function(){
 	    });
 	});
 
-	$('.certificates').each(function(){
-	    const slider = $(this).find('.swiper');
-	    const sliderId = slider.data('id');
-	    const sliderClass = '.' + sliderId;
-	    const arrow = slider.data('arrow');    
+    const sliderCer = $('.certificates').find('.swiper');
+    const sliderIdCer = sliderCer.data('id');
+    const sliderClassCer = '.' + sliderIdCer;
+    const arrowCer = sliderCer.data('arrow');    
 
-	    const newProductsSwiper = new Swiper(sliderClass, {
-			slidesPerView: "auto",
-            spaceBetween: 28,
-	      	navigation: {
-	            nextEl: '.swiper-' + arrow + '-next',
-	            prevEl: '.swiper-' + arrow + '-prev',
-	          },
-	      	lazy: true
-	    });
-  	})	
+    const newCerSwiper = new Swiper(sliderClassCer, {
+        loop: true,
+        slidesPerView: "auto",
+        spaceBetween: 28,
+        navigation: {
+            nextEl: '.swiper-' + arrowCer + '-next',
+            prevEl: '.swiper-' + arrowCer + '-prev',
+        } 
+    });
 
 
     lightGallery(document.getElementById('swiperBlockGall'), {
