@@ -365,6 +365,45 @@ $(function(){
         $(this).toggleClass('active');
         $('.menu_top_main').toggleClass('active');
     })
+
+    // cookie 
+
+    function setCookie(name, value, days) {
+        let expires = "";
+        if (days) {
+            let date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+    function getCookie(name) {
+        let nameEQ = name + "=";
+        let ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    const cookieValue = getCookie("hideCookieMessage");
+
+    if (cookieValue) {
+        $('.cookie_fixed_block').removeClass('show');
+    } else {
+        $('.cookie_fixed_block').addClass('show');
+    }
+
+    $('.cookie_fixed_block .close').on('click', function(){
+        $('.cookie_fixed_block').removeClass('show');
+    });
+
+    $('.cookie_fixed_block .btn_ok').on('click', function(){
+        $('.cookie_fixed_block').removeClass('show');
+        setCookie("hideCookieMessage", "true", 30); // Устанавливаем cookie на 30 дней
+    });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
